@@ -2,11 +2,11 @@ var passport = require('passport');
 
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-var user = require('../models/user');
+var User = require('../models/user');
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_SECRET,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK
   },
 
@@ -20,7 +20,7 @@ passport.use(new GoogleStrategy({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id,
-          imageUrl: profile.image.url
+          //imageUrl: profile.image.url
         });
         newUser.save(function(err) {
           if (err) return cb(err);
@@ -36,7 +36,7 @@ passport.serializeUser(function(user, done) {
 });
 
   passport.deserializeUser(function(id, done) {
-  Student.findById(id, function(err, student) {
-    done(err, student);
+  User.findById(id, function(err, user) {
+    done(err, user);
   });
 });
