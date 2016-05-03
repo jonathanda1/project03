@@ -1,7 +1,8 @@
 var User = require('../models/user');
 
 module.exports = {
-  index: index
+  index: index,
+  searchEvents: searchEvents
 };
 
 function index(req, res) {
@@ -10,3 +11,5 @@ function index(req, res) {
       res.json(user);
     });
 }
+
+
