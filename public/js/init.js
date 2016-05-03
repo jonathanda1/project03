@@ -1,7 +1,7 @@
 // We created this file
 $(document).ready(function () {
        $('.slider').slider({full_width: true,
-                            interval: 1000,
+                            interval: 3500,
                             transition: 800,
        });
    });
