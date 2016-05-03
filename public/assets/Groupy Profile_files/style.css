@@ -1,0 +1,36 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+
+/*Footer sticks to foot*/
+/*body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }*/
+
+ /* .footer-copyright {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }*/
+
+
+/*.footer-copyright {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: -3em;
+}
+*/
