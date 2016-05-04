@@ -23,33 +23,29 @@
       <ul class="right hide-on-med-and-down">
         <$ if (user) { $>
 
-          <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
-          <$ } else { $>
-          <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
-          <$ } $>
-        </ul>
+        <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+        <$ } else { $>
+        <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+        <$ } $>
+      </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      </div>
-    </nav>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
-    <!-- Profile Pic -->
-    <div class="row" style="background-color:grey">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="<$= user.imageUrl $>">
-            <span class="card-title"><$= user.name $></span>
-          </div>
-
-          <!-- <div class="card-content">
-            <p>Jonath  Hyundai</p>
-          </div> -->
+  <!-- Profile Pic -->
+  <div class="row" style="background-color:grey">
+    <div class="col s12 m4 offset-m1">
+      <div class="card">
+        <div class="card-image">
+          <img src="<$= user.imageUrl $>" alt="no image to display yet">
+          <span class="card-title"><$= user.name $></span>
         </div>
       </div>
+    </div>
 
       <!-- Profile info card -->
       <div class="row">
@@ -68,43 +64,43 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+
+
+  </div>
+
+  <!-- Image cards -->
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col s12 m3">
+      <div class="card purple lighten-2">
+        <div class="card-image">
+          <img src="../assets/Fake_J_Dai.jpg">
+        </div>
+        <div class="card-content">
+          <p>Temp Text (Upcoming Dates?)</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
         </div>
       </div>
-
-      <!-- Image cards -->
-      <div class="row">
-        <!-- Card 1 -->
-        <div class="col s12 m3">
-          <div class="card purple lighten-2">
-            <div class="card-image">
-              <img src="../assets/Fake_J_Dai.jpg">
-            </div>
-            <div class="card-content">
-              <p>Temp Text (Upcoming Dates?)</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
 
     <br><br>
 
-<!-- Modal structure -->
+    <!-- Modal structure -->
     <div class="section">
       <div id="modal1" class="modal bottom-sheet purple">
         <div class="modal-content">
           <h4>Search results for artist.name</h4>
-          <div>Event <a class="waves-effect waves-light btn purple accent-2 right">add</a></div>
+          <div>Event <a class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div>
           <br>
-          <div>Event <a class="waves-effect waves-light btn purple accent-2 right">add</a></div>
+          <div>Event <a class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div>
           <br>
-          <div>Event <a class="waves-effect waves-light btn purple accent-2 right">add</a></div>
+          <div>Event <a class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div>
           <br>
-          <div>Event <a class="waves-effect waves-light btn purple accent-2 right">add</a></div>
-      </div>
+          <div>Event <a class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div>
+        </div>
         <div class="modal-footer purple lighten-1">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
         </div>
@@ -113,13 +109,19 @@
     </div>
 
 
-<!--   <footer class="page-footer">
-     <div class="footer-copyright">
-        <div class="container">
-          © 2014 Copyright Groupy Group
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    <footer class="page-footer purple">
+      <div class="container">
+        <div class="row">
+
+
+        </div>
       </div>
-    </div>
-  </footer> -->
-</body>
-</html>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2016 Groupy Group
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
