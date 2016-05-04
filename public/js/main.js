@@ -18,7 +18,6 @@ console.log(name)
 
 
 
-
 $('.add-button').click(function(e) {
   console.log('clicked')
 })
