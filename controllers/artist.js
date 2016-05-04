@@ -7,7 +7,7 @@ module.exports = {
 function show(req, res) {
 
   var baseUri = 'http://api.eventful.com/json/events/search?q=music&category=music'
-  var key = '&app_key='+ process.env['EVENTFUL_KEY']
+  var key = '&app_key=' + process.env['EVENTFUL_KEY']
   var searchStr = '&keywords='+req.params.name;
   var location = '&location=United+States'
   request(baseUri+key+searchStr+location, function(err, apiRes, body){
