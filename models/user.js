@@ -7,7 +7,7 @@ var artistSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
     name: String,
     email: String,
-    artists: [artistSchema],
+    events: Array,
     googleId: String,
     imageUrl: String,
     created: {type: Date, default: Date.now}
