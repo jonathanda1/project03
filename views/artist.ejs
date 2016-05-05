@@ -15,16 +15,15 @@
 <body>
 
   <!-- Nav bar -->
-  <nav class="cyan accent-4" role="navigation">
+  <nav class="purple" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Groupy</a>
       <ul class="right hide-on-med-and-down">
         <$ if (user) { $>
-          <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
-          <$ } else { $>
-          <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
-          <$ } $>
+        <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+        <$ } else { $>
+        <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+        <$ } $>
       </ul>
-
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -37,66 +36,55 @@
     <ul class="slides">
       <li>
         <img class="img-responsive" src="http://wallpapers-best.com/uploads/posts/2015-11/1_the_strokes.jpg">
-        <div class="caption center-align">
-          <h3>The Strokes</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
       </li>
       <li>
-        <img class="img-responsive" src="../assets/MM.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
+        <img class="img-responsive" src="../assets/MM.jpg">
       </li>
       <li>
-        <img class="img-responsive" src="../assets/Fake_J_Dai.jpg"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
+        <img class="img-responsive" src="../assets/Lana.jpg">
       </li>
       <li>
-        <img class="img-responsive" src="../assets/Fake_J_Dai.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-        </div>
+        <img class="img-responsive" src="../assets/Fake_J_Dai.jpg">
       </li>
     </ul>
   </div>
 
+  <!-- Page header -->
+  <div>
+    <h1 class="center thin black-text">Artist</h1>
+  </div>
+
   <!-- Image cards -->
   <div class="row">
-        <!-- Card 1 -->
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="../assets/MM.jpg">
-              <span class="card-title">Artists</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
+    <!-- Card 1 -->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="../assets/MM.jpg">
+          <span class="card-title">Artists</span>
+        </div>
+        <div class="card-content purple">
+          <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action purple lighten-2">
+            <a href="#">This is a link</a>
           </div>
         </div>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="../assets/Fake_J_Dai.jpg">
-              <span class="card-title">Genres</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
+      <!-- Card 2 -->
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="../assets/MM.jpg">
+            <span class="card-title">Artists</span>
+          </div>
+          <div class="card-content purple lighten-2">
+            <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
-            <div class="card-action">
+            <div class="card-action purple">
               <a href="#">This is a link</a>
             </div>
           </div>
@@ -106,32 +94,30 @@
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="../assets/Fake_J_Dai.jpg">
-              <span class="card-title">Venues</span>
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
             </div>
-            <div class="card-content">
+            <div class="card-content grey darken-2">
               <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action black">
+                <a href="#">This is a link</a>
+              </div>
             </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-
           </div>
         </div>
+        <br><br>
+
+        <div class="section">
+        </div>
       </div>
-    </div>
-    <br><br>
 
-    <div class="section">
-    </div>
-  </div>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+      <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
 
 
-  </body>
-</html>
+    </body>
+    </html>

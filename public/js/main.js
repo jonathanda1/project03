@@ -61,5 +61,31 @@ $(document).on('click', '.add-button', function(){
   })
 })
 
+// appending divs + form value to #chatbox
+// $("#comment").click(function () {
+//  $("#chatbox").append("<div>" + $("#textarea1").val() + "</div>")
+//   $("#textarea1").val('')
+// })
+
+// $(document).ready(function() {
+//   $("#comment").click(function() {
+//     var text = $("#textarea1").val()
+//     console.log("clicked")
+//     $("#chatbox").append("<div>"+ text +"</div>")
+//     $("#textarea1").val('')
+//   })
+// })
+
+$(document).ready(function() {
+  $("#comment").click(function() {
+    var text = $("#textarea1").val()
+    console.log("clicked")
+    $("#chatbox").append("<div class="col s12 m6 offset-m3"> <div class="card-panel purple lighten-2 text-black"><span class="white-text">" + text + "</span></div></div>")
+    $("#textarea1").val('')
+  })
+})
+
+
+
 
 
