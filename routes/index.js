@@ -16,6 +16,11 @@ router.get('/event', function(req, res, next) {
   res.render('event', { title: 'Groupy', user: req.user })
 })
 
+// Event index page
+router.get('/event_index', function(req, res, next) {
+  res.render('event_index', { title: 'Groupy', user: req.user})
+})
+
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }

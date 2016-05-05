@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Groupy Event List</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+</head>
+<body>
+
+  <!-- Nav bar -->
+  <nav class="purple" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo thin">Groupy</a>
+      <ul class="right hide-on-med-and-down">
+        <$ if (user) { $>
+          <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+          <$ } else { $>
+          <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+          <$ } $>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <div>
+    <h1 class="center thin">Event List</h1>
+  </div>
+
+
+  <!-- Image cards -->
+  <div class="row">
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="col s12 m4">
+          <div class="card purple lighten-2">
+            <div class="card-image">
+              <img src="../assets/MM.jpg">
+              <span class="card-title">Artists</span>
+            </div>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="section">
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+  </body>
+</html>
