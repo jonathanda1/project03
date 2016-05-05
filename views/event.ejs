@@ -15,9 +15,10 @@
 <body>
 
   <!-- Nav bar -->
-  <nav class="cyan accent-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Groupy</a>
+  <nav class="purple" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo thin">Groupy</a>
       <ul class="right hide-on-med-and-down">
+      <li><a href="http://localhost:3000/users/user">Profile</a></li>
         <$ if (user) { $>
           <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
           <$ } else { $>
@@ -32,9 +33,14 @@
     </div>
   </nav>
 
+  <!-- Page header -->
+  <div>
+    <h1 class="center thin black-text">Event</h1>
+  </div>
+
  <!-- Event Pic -->
     <div class="row" style="background-color:">
-      <div class="col s12 m4">
+      <div class="col s12 m3 offset-m1">
         <div class="card">
           <div class="card-image">
             <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Hollywood_Palladium_2012.jpg">
@@ -48,15 +54,15 @@
 
         <!-- Event info card -->
         <div class="row">
-          <div class="col s12 m4">
-            <div class="card cyan darken-2">
+          <div class="col s12 m6">
+            <div class="card purple lighten-2">
               <div class="card-content white-text">
                 <span class="card-title">My Chemical Bromance</span>
                 <p>at Venue</p>
                 <p>Address</p>
                 <p>Date/time</p>
                 </div>
-                <div class="card-action">
+                <div class="card-action white-text">
                   <a href="#">This is a link</a>
                   <a href="#">This is a link</a>
                 </div>
@@ -65,10 +71,32 @@
           </div>
     </div>
 
-    <div class="divider"></div>
-    <div class="section">
-      <h5>Chat</h5>
+    <!-- Comment form -->
+    <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6 offset-m3">
+          <textarea id="textarea1" class="materialize-textarea black-text"></textarea>
+          <label for="textarea1">Comments</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+ <!--  $("#textarea1").val().append("#chatbox")
+  $("#textarea1").val('') -->
+
+<!--- Chat box -->
+  <div class="col s12" id="chatbox">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card-panel purple lighten-2 text-black">
+        <span class="white-text">Hey, I'm thinking about going to the show! Any bromancers want to meet up and march in a Black Parade down to the venue!?  Hit me up!
+        </span>
+      </div>
     </div>
+  </div>
+  </div>
 
     <br><br>
 
