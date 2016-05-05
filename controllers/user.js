@@ -8,9 +8,31 @@ function index(req, res) {
     });
 }
 
+function update(req, res, next){
+  var eventId = req.body._id
+
+  console.log(req.user._id)
+  User.findById(req.user._id, function(err, user){
+    console.log('userupdateerr:'+err)
+    console.log('userupdateuser:'+event)
+    // if(err) console.log(err)
+    //   if(user.events.indexOf(eventId)==-1){
+
+    //     user.events.push(eventId)
+    //     user.save(function(err, updatedUser){
+    //       res.json(updatedUser)
+    //     })
+    //   }
+      //check if event exists in db
+      //create event in database
+
+    })
+}
+
 module.exports = {
   index: index,
-  searchEvents: searchEvents
+  // searchEvents: searchEvents,
+  update: update
 };
 
 

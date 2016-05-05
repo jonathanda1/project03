@@ -23,7 +23,7 @@ console.log(name)
             venue: event[i].venue_name,
             title: event[i].title,
             date: event[i].start_time,
-            imageUrl: event[i].image.medium.url,
+            imageUrl: event[i].image.medium.url || '#',
             users: [],
             eventfulId: event[i].id
           })
@@ -53,13 +53,15 @@ console.log(name)
     }
  });
 })
+
+
 $(document).on('click', '.add-button', function(){
   var eventData = $('#'+this.id).data()
-  console.log(eventData)
   $.post('/events', eventData, function(data) {
     console.log(data)
   })
 })
+
 
 // appending divs + form value to #chatbox
 // $("#comment").click(function () {
@@ -83,6 +85,17 @@ $(document).ready(function() {
     $("#chatbox").append("<div class="col s12 m6 offset-m3"> <div class="card-panel purple lighten-2 text-black"><span class="white-text">" + text + "</span></div></div>")
     $("#textarea1").val('')
   })
+
+$.ajax({
+  type: "GET",
+  url: "/api/user",
+}).then(function(user) {
+
+  var event = user.events
+  for (var i = 0; i < event.length; i++) {
+    $("#event-container").append('<div class="col s12 m3"><div class="card purple lighten-2">'+ event[i].title + '</div></div>')
+  }
+
 })
 
 
