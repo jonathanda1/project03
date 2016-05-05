@@ -78,27 +78,11 @@ $(document).on('click', '.add-button', function(){
 //   })
 // })
 
-$(document).ready(function() {
-  $("#comment").click(function() {
-    var text = $("#textarea1").val()
-    console.log("clicked")
-    $("#chatbox").append("<div class="col s12 m6 offset-m3"> <div class="card-panel purple lighten-2 text-black"><span class="white-text">" + text + "</span></div></div>")
-    $("#textarea1").val('')
-  })
-
-$.ajax({
-  type: "GET",
-  url: "/api/user",
-}).then(function(user) {
-
-  var event = user.events
-  for (var i = 0; i < event.length; i++) {
-    $("#event-container").append('<div class="col s12 m3"><div class="card purple lighten-2">'+ event[i].title + '</div></div>')
-  }
-
-})
-
-
-
-
+// $(document).ready(function() {
+//   $("#comment").click(function() {
+//     var text = $("#textarea1").val()
+//     console.log("clicked")
+//     $("#chatbox").append("<div class="col s12 m6 offset-m3"> <div class="card-panel purple lighten-2 text-black"><span class="white-text">" + text + "</span></div></div>")
+//     $("#textarea1").val('')
+//   })
 
