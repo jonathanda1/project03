@@ -53,13 +53,26 @@ console.log(name)
     }
  });
 })
+
+
 $(document).on('click', '.add-button', function(){
   var eventData = $('#'+this.id).data()
-  console.log(eventData)
+
+  $.get('/api/user', function(user){
+    console.log(user._id)
+    eventData.users.push(user._id)
+    console.log('usersare:'+eventData.users)
+    console.log(eventData)
+  })
+
+
+
   $.post('/events', eventData, function(data) {
     console.log(data)
   })
 })
+
+
 
 
 
