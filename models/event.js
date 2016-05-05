@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
 
 var eventSchema = new mongoose.Schema({
-    location: String,
-    artist: String,
-    time: Date
+    venue: String,
+    title: String,
+    date: Date,
+    imageUrl: String,
+    users: Array,
+    eventfulId: String
 })
 
 var Event = mongoose.model('Event', eventSchema);

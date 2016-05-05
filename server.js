@@ -7,9 +7,13 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+var cors = require('cors');
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
+var events = require('./routes/events');
 
 require('dotenv').load()
 
@@ -40,6 +44,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors())
 
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -53,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/api', api);
+app.use('/events', events);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

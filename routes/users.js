@@ -12,11 +12,17 @@ router.put('/user', function(req, res, next){
   console.log(req.user._id)
   User.findById(req.user._id, function(err, user){
     if(err) res.json(err)
-      user.events.push(eventId)
-      user.save(function(err, updatedUser){
-        res.json(updatedUser)
-      })
-  })
+      if(user.events.indexOf(eventId)==-1){
+
+        user.events.push(eventId)
+        user.save(function(err, updatedUser){
+          res.json(updatedUser)
+        })
+      }
+      //check if event exists in db
+      //create event in database
+
+    })
 })
 
 module.exports = router;

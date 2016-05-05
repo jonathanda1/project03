@@ -1,9 +1,5 @@
 var User = require('../models/user');
 
-module.exports = {
-  index: index,
-  searchEvents: searchEvents
-};
 
 function index(req, res) {
     User.find({}, function(err, users) {
@@ -11,5 +7,11 @@ function index(req, res) {
       res.json(user);
     });
 }
+
+module.exports = {
+  index: index,
+  searchEvents: searchEvents
+};
+
 
 
