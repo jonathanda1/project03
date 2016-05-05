@@ -55,13 +55,17 @@ function create(req, res){
 }
 
 function show(req, res, next){
-  var id = req.params.id
-    res.render('event', {event: req.body, user: req.user});
+  Event.findById(req.params.id, function(err, event){
+    console.log(err);
+    console.log(event);
+    res.render('event', {event: event, user: req.user});
+  })
+
 
 }
 
 module.exports = {
   index: index,
   create: create,
-  show: show,
+  show: show
 };
