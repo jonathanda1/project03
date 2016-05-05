@@ -1,6 +1,7 @@
 var Event = require('../models/event')
 var request = require('request')
 var User = require('../models/user')
+var Event = require('../models/event')
 
 var eventEmbed
 
@@ -36,33 +37,31 @@ function create(req, res){
           console.log(savedEvent._id+' is event id')
           eventEmbed = savedEvent
       })
-
-
-
   })
 
   console.log("req.user: "+req.user)
   User.findById(req.user._id, function(err, user){
-
-    console.log('userErr? '+err)
-    console.log('currentUser? '+user)
       user.events.push(eventEmbed)
-      // console.log('user.events: '+user.events)
+
       user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
 
-    user.save(function(err, savedUser){
+      user.save(function(err, savedUser){
         if(err) console.log(err)
           console.log('updated user.events...?')
           res.json(savedUser)
           console.log(savedUser)
       })
   })
+}
+
+function show(req, res, next){
+  var id = req.params.id
+    res.render('event', {event: req.body, user: req.user});
 
 }
 
-
-
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  show: show,
 };

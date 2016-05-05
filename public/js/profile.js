@@ -8,7 +8,7 @@ var renderEvent = _.template(`
         <p><%= title %></p>
       </div>
       <div class="card-action">
-        <a href="/event/<%= _id%>">See this event</a>
+        <a href="/events/<%= _id%>">See this event</a>
       </div>
     </div>
   </div>
