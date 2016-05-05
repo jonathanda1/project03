@@ -16,10 +16,11 @@ function create(req, res){
     if(event==null){
       var event = new Event()
       event.eventfulId = req.body.eventfulId
-      event.venue = req.body.venue,
-      event.title = req.body.title,
-      event.date = req.body.date,
+      event.venue = req.body.venue
+      event.title = req.body.title
+      event.date = req.body.date
       event.imageUrl = req.body.imageUrl
+      event.users = req.body.users
 
       event.save(function(err, savedEvent){
         if(err) console.log(err)

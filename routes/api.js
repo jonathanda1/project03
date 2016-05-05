@@ -7,5 +7,6 @@ router.get('/user', function(req, res, next) {
   res.json(req.user);
 });
 
+
 router.get('/artist/:name/events', artistController.show)
 module.exports = router;
