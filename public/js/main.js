@@ -23,7 +23,7 @@ console.log(name)
             venue: event[i].venue_name,
             title: event[i].title,
             date: event[i].start_time,
-            imageUrl: event[i].image.medium.url,
+            imageUrl: event[i].image.medium.url || '#',
             users: [],
             eventfulId: event[i].id
           })
@@ -57,19 +57,20 @@ console.log(name)
 
 $(document).on('click', '.add-button', function(){
   var eventData = $('#'+this.id).data()
-
-  $.get('/api/user', function(user){
-    console.log(user._id)
-    eventData.users.push(user._id)
-    console.log('usersare:'+eventData.users)
-    console.log(eventData)
-  })
-
-
-
   $.post('/events', eventData, function(data) {
     console.log(data)
   })
+})
+
+$.ajax({
+  type: "GET",
+  url: "/api/user",
+}).then(function(user) {
+
+  var event = user.events
+  for (var i = 0; i < event.length; i++) {
+    $("#event-container").append('<div class="col s12 m3"><div class="card purple lighten-2">'+ event[i].title + '</div></div>')
+  }
 })
 
 

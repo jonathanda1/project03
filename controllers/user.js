@@ -9,7 +9,7 @@ function index(req, res) {
 }
 
 function update(req, res, next){
-  var eventfulId = req.body.eventfulId
+  var eventId = req.body._id
 
   console.log(req.user._id)
   User.findById(req.user._id, function(err, user){
