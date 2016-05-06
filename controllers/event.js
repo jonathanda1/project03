@@ -23,6 +23,8 @@ function create(req, res){
       eventNew.date = req.body.date
       eventNew.imageUrl = req.body.imageUrl
       eventNew.users = [req.user._id]
+      console.log("REQUEST: ", req.body)
+      console.log("EVENT_NEW: ", eventNew)
 
       eventNew.save(function(err, savedEvent){
         if(err) console.log(err)
