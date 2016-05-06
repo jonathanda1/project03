@@ -78,11 +78,10 @@ $(document).on('click', '.add-button', function(){
 //   })
 // })
 
-// $(document).ready(function() {
-//   $("#comment").click(function() {
-//     var text = $("#textarea1").val()
-//     console.log("clicked")
-//     $("#chatbox").append("<div class="col s12 m6 offset-m3"> <div class="card-panel purple lighten-2 text-black"><span class="white-text">" + text + "</span></div></div>")
-//     $("#textarea1").val('')
-//   })
-
+// Comment box
+$("#comment").click(function() {
+  var text = $("#textarea1").val()
+  console.log("clicked")
+      $("#chatbox").append("<div class='row'><div class='col s4 m6 offset-m3'><div class='card-panel purple lighten-2 text-black'><span class='white-text'>" + text + "</span></div></div></div>")
+  $("#textarea1").val('')
+})
