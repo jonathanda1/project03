@@ -16,13 +16,19 @@ function create(req, res){
   Event.findOne({eventfulId: req.body.eventfulId}, function(err, event){
     if(event==null){
       console.log('event is null')
-      var event = new Event()
-      event.eventfulId = req.body.eventfulId
-      event.venue = req.body.venue
-      event.title = req.body.title
-      event.date = req.body.date
-      event.imageUrl = req.body.imageUrl
-      event.users = [req.user._id]
+      var eventNew = new Event()
+      eventNew.eventfulId = req.body.eventfulId
+      eventNew.venue = req.body.venue
+      eventNew.title = req.body.title
+      eventNew.date = req.body.date
+      eventNew.imageUrl = req.body.imageUrl
+      eventNew.users = [req.user._id]
+
+      eventNew.save(function(err, savedEvent){
+        if(err) console.log(err)
+          console.log('savedEvent: '+savedEvent)
+          eventEmbed = savedEvent
+      })
     } else {
       console.log(event)
       event.users.push(req.user._id)
