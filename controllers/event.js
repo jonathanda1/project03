@@ -2,6 +2,7 @@ var Event = require('../models/event')
 var request = require('request')
 var User = require('../models/user')
 var Event = require('../models/event')
+var moment = require('moment')
 
 var eventEmbed
 
@@ -73,8 +74,8 @@ function create(req, res){
 function show(req, res, next){
   Event.findById(req.params.id, function(err, event){
     console.log(err);
-    console.log(event);
-    res.render('event', {event: event, user: req.user});
+    console.log(event.date);
+    res.render('event', {event: event, user: req.user, moment: moment});
   })
 
 

@@ -58,11 +58,11 @@
 
         <!-- Event info card -->
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12 m7">
             <div class="card purple lighten-2">
               <div class="card-content white-text">
 
-                <span class="card-title"><$= event.date $></span>
+                <span class="card-title"><$= moment(event.date).format("dddd MMMM Do YYYY, h:mm") $></span>
                 <p><$= event.venue $></p>
                 <p> <$= event.venueAddress $></p>
                 <p><$= event.city $>, <$= event.state $></p>
