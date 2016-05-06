@@ -29,7 +29,16 @@ function create(req, res){
       eventNew.save(function(err, savedEvent){
         if(err) console.log(err)
           console.log('savedEvent: '+savedEvent)
-          eventEmbed = savedEvent
+          User.findById(req.user._id, function(err, user){
+            user.events.push(savedEvent)
+
+            user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
+
+            user.save(function(err, savedUser){
+              if(err) console.log(err)
+                res.json(savedUser)
+            })
+          })
       })
     } else {
       console.log(event)
@@ -37,24 +46,24 @@ function create(req, res){
       event.users = event.users.filter (function (v, i, a) { return a.indexOf (v) == i });
       event.save(function(err, savedEvent){
         if(err) console.log(err)
-          eventEmbed = savedEvent
+        User.findById(req.user._id, function(err, user){
+            user.events.push(savedEvent)
+
+            user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
+
+            user.save(function(err, savedUser){
+              if(err) console.log(err)
+                res.json(savedUser)
+            })
+        })
       })
     }
 
 
   })
 
-  User.findById(req.user._id, function(err, user){
-      user.events.push(eventEmbed)
-
-      user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
-
-      user.save(function(err, savedUser){
-        if(err) console.log(err)
-          res.json(savedUser)
-      })
-  })
 }
+
 
 function show(req, res, next){
   Event.findById(req.params.id, function(err, event){
