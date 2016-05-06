@@ -33,12 +33,13 @@ function create(req, res){
       console.log(event)
       event.users.push(req.user._id)
       event.users = event.users.filter (function (v, i, a) { return a.indexOf (v) == i });
-    }
-
-    event.save(function(err, savedEvent){
+      event.save(function(err, savedEvent){
         if(err) console.log(err)
           eventEmbed = savedEvent
       })
+    }
+
+
   })
 
   User.findById(req.user._id, function(err, user){
