@@ -22,7 +22,9 @@ function addComment() {
   }).then(function(data) {
     $("#textarea1").val('')
     console.log(data)
+
   })
+  location.reload()
 }
 
 $(document).on("click", "#comment", addComment)
@@ -85,6 +87,7 @@ $(document).on('click', '.add-button', function(){
   $.post('/events', eventData, function(data) {
     console.log(data)
   })
+  location.reload()
 })
 
 
