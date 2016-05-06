@@ -21,7 +21,7 @@ console.log(name)
        var event = eventlist.events.event
              $('#searched-event-list').append('<h4>Upcoming events for '+name+'</h4>')
        for(i=0; i<event.length; i++){
-        var searchedEvent = '<div class="eventSample">'+event[i].start_time+' | '+event[i].title+' | '+event[i].venue_name+'<a id=' +i+' class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div><br/>'
+        var searchedEvent = '<div class="eventSample">'+event[i].start_time+' | '+event[i].title+' | '+event[i].venue_name+'<a id=' +i+' class="add-button waves-effect waves-light btn purple accent-2 right text-white">add</a></div><br/>'
 
           $('#searched-event-list').append(searchedEvent)
           $('#'+i).data({
