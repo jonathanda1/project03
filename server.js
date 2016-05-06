@@ -93,6 +93,6 @@ app.use(function(err, req, res, next) {
 });
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env['DATABASE_URL'])
+mongoose.connect(process.env['MONGODB_URI'])
 
 module.exports = app;
