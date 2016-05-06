@@ -13,11 +13,9 @@ function index(req, res) {
 }
 
 function create(req, res){
-  console.log(req.body);
   Event.findOne({eventfulId: req.body.eventfulId}, function(err, event){
-    console.log(err)
-    console.log(event)
     if(event==null){
+      console.log('event is null')
       var event = new Event()
       event.eventfulId = req.body.eventfulId
       event.venue = req.body.venue
@@ -26,20 +24,17 @@ function create(req, res){
       event.imageUrl = req.body.imageUrl
       event.users = [req.user._id]
     } else {
+      console.log(event)
       event.users.push(req.user._id)
       event.users = event.users.filter (function (v, i, a) { return a.indexOf (v) == i });
     }
 
     event.save(function(err, savedEvent){
         if(err) console.log(err)
-          console.log('saved...?')
-          // res.json(savedEvent)
-          console.log(savedEvent._id+' is event id')
           eventEmbed = savedEvent
       })
   })
 
-  console.log("req.user: "+req.user)
   User.findById(req.user._id, function(err, user){
       user.events.push(eventEmbed)
 
@@ -47,9 +42,7 @@ function create(req, res){
 
       user.save(function(err, savedUser){
         if(err) console.log(err)
-          console.log('updated user.events...?')
           res.json(savedUser)
-          console.log(savedUser)
       })
   })
 }
