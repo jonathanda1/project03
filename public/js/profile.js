@@ -21,7 +21,7 @@ $(document).ready(function () {
     url: "/api/user",
   }).then(function(user) {
     var event = user.events
-    for (var i = 1; i < event.length; i++) {
+    for (var i = 0; i < event.length; i++) {
       $("#event-row").append(renderEvent(event[i]))
     }
 
