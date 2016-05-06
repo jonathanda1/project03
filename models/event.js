@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
 
+var commentSchema = new mongoose.Schema({
+  text: String
+})
+
 var eventSchema = new mongoose.Schema({
     venue: String,
     venueAddress: String,
@@ -10,7 +14,8 @@ var eventSchema = new mongoose.Schema({
     date: Date,
     imageUrl: String,
     users: Array,
-    eventfulId: String
+    eventfulId: String,
+    comment: [commentSchema]
 })
 
 var Event = mongoose.model('Event', eventSchema);

@@ -7,6 +7,35 @@ $('#cancel-button').click(function(event) {
   $('#searched-event-list').html('')
 });
 
+
+function addComment() {
+  console.log('clicked')
+  console.log($("#textarea1").val())
+  $.ajax ({
+    method: "POST",
+    url: "/api/comments",
+    data: {
+          comment: $("#textarea1").val(),
+          eventId: window.location.href.split('/').pop()
+          }
+  }).then(function(data) {
+    $("#textarea1").val('')
+    console.log(data)
+  })
+}
+
+$(document).on("click", "#comment", addComment)
+
+
+
+// $("#comment").click(function() {
+//   var text = $("#textarea1").val()
+//   console.log("clicked")
+//       $("#chatbox").append("<div class='row'><div class='col s4 m6 offset-m3'><div class='card-panel purple lighten-2 text-black'><span class='white-text'>" + text + "</span></div></div></div>")
+//   $("#textarea1").val('')
+// })
+
+
 $('#search-button').click(function(event){
   console.log('clicked')
   var name = $('#search-string').val()
@@ -58,25 +87,6 @@ $(document).on('click', '.add-button', function(){
 })
 
 
-// appending divs + form value to #chatbox
-// $("#comment").click(function () {
-//  $("#chatbox").append("<div>" + $("#textarea1").val() + "</div>")
-//   $("#textarea1").val('')
-// })
-
-// $(document).ready(function() {
-//   $("#comment").click(function() {
-//     var text = $("#textarea1").val()
-//     console.log("clicked")
-//     $("#chatbox").append("<div>"+ text +"</div>")
-//     $("#textarea1").val('')
-//   })
-// })
 
 // Comment box
-$("#comment").click(function() {
-  var text = $("#textarea1").val()
-  console.log("clicked")
-      $("#chatbox").append("<div class='row'><div class='col s4 m6 offset-m3'><div class='card-panel purple lighten-2 text-black'><span class='white-text'>" + text + "</span></div></div></div>")
-  $("#textarea1").val('')
-})
+
