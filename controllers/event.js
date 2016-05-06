@@ -13,46 +13,57 @@ function index(req, res) {
 }
 
 function create(req, res){
-  console.log(req.body);
   Event.findOne({eventfulId: req.body.eventfulId}, function(err, event){
-    console.log(err)
-    console.log(event)
     if(event==null){
-      var event = new Event()
-      event.eventfulId = req.body.eventfulId
-      event.venue = req.body.venue
-      event.title = req.body.title
-      event.date = req.body.date
-      event.imageUrl = req.body.imageUrl
-      event.users = [req.user._id]
+      console.log('event is null')
+      var eventNew = new Event()
+      eventNew.eventfulId = req.body.eventfulId
+      eventNew.venue = req.body.venue
+      eventNew.title = req.body.title
+      eventNew.date = req.body.date
+      eventNew.imageUrl = req.body.imageUrl
+      eventNew.users = [req.user._id]
+      console.log("REQUEST: ", req.body)
+      console.log("EVENT_NEW: ", eventNew)
+
+      eventNew.save(function(err, savedEvent){
+        if(err) console.log(err)
+          console.log('savedEvent: '+savedEvent)
+          User.findById(req.user._id, function(err, user){
+            user.events.push(savedEvent)
+
+            user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
+
+            user.save(function(err, savedUser){
+              if(err) console.log(err)
+                res.json(savedUser)
+            })
+          })
+      })
     } else {
+      console.log(event)
       event.users.push(req.user._id)
       event.users = event.users.filter (function (v, i, a) { return a.indexOf (v) == i });
+      event.save(function(err, savedEvent){
+        if(err) console.log(err)
+        User.findById(req.user._id, function(err, user){
+            user.events.push(savedEvent)
+
+            user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
+
+            user.save(function(err, savedUser){
+              if(err) console.log(err)
+                res.json(savedUser)
+            })
+        })
+      })
     }
 
-    event.save(function(err, savedEvent){
-        if(err) console.log(err)
-          console.log('saved...?')
-          // res.json(savedEvent)
-          console.log(savedEvent._id+' is event id')
-          eventEmbed = savedEvent
-      })
+
   })
 
-  console.log("req.user: "+req.user)
-  User.findById(req.user._id, function(err, user){
-      user.events.push(eventEmbed)
-
-      user.events = user.events.filter (function (v, i, a) { return a.indexOf (v) == i });
-
-      user.save(function(err, savedUser){
-        if(err) console.log(err)
-          console.log('updated user.events...?')
-          res.json(savedUser)
-          console.log(savedUser)
-      })
-  })
 }
+
 
 function show(req, res, next){
   Event.findById(req.params.id, function(err, event){
