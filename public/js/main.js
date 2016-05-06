@@ -82,6 +82,6 @@ $(document).on('click', '.add-button', function(){
 $("#comment").click(function() {
   var text = $("#textarea1").val()
   console.log("clicked")
-      $("#chatbox").append("<div class='row'><div class='col s4 m6 offset-m3'> <div class='card-panel purple lighten-2 text-black'><span class='white-text'>" + text + "</span></div></div></div>")
+      $("#chatbox").append("<div class='row'><div class='col s4 m6 offset-m3'><div class='card-panel purple lighten-2 text-black'><span class='white-text'>" + text + "</span></div></div></div>")
   $("#textarea1").val('')
 })
