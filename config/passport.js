@@ -14,6 +14,7 @@ passport.use(new GoogleStrategy({
     console.log(profile)
     User.findOne({ 'googleId': profile.id }, function(err, user) {
       if (err) return cb(err);
+      console.log('1.')
       if (user) {
         return cb(null, user);
       } else {
@@ -23,10 +24,13 @@ passport.use(new GoogleStrategy({
           googleId: profile.id,
           imageUrl: profile.photos[0].value.slice(0, profile.photos[0].value.length-2)+'200'
         });
+        console.log('2.')
         newUser.save(function(err) {
+          console.log('2.5.')
           if (err) return cb(err);
           return cb(null, newUser);
         });
+        console.log('3.')
       }
     });
   }

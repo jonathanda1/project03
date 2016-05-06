@@ -15,6 +15,7 @@
     "express": "~4.13.1",
     "express-session": "^1.13.0",
     "lodash": "^4.11.2",
+    "moment": "^2.13.0",
     "mongoose": "^4.4.14",
     "morgan": "~1.6.1",
     "node-sass": "^3.6.0",

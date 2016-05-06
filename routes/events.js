@@ -8,4 +8,5 @@ router.post('/', eventController.create);
 
 router.get('/:id', eventController.show)
 
+
 module.exports = router;
