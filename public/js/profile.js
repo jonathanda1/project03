@@ -14,6 +14,20 @@ var renderEvent = _.template(`
   </div>
   `)
 
+var renderComment = _.template(`
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card-panel purple lighten-2 text-black">
+        <div id="commentFeed">
+        <%= comment %>
+        </div>
+      </div>
+    </div>
+  </div>
+  `)
+
+
+
 $(document).ready(function () {
   console.log("profile.js loaded")
   $.ajax({
@@ -27,3 +41,7 @@ $(document).ready(function () {
 
   })
 })
+
+
+
+
