@@ -14,6 +14,7 @@ function addComment() {
     data: {
           comment: $("#textarea1").val(),
           eventId: window.location.href.split('/').pop()
+
           }
   }).then(function(data) {
     $("#textarea1").val('')

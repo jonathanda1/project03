@@ -7,7 +7,7 @@ var commentsController = require('../controllers/comments');
 router.get('/user', function(req, res, next) {
   res.json(req.user);
 });
-
+/*router.get ('/comments', commentsController.index)*/
 router.post('/comments', commentsController.create)
 
 

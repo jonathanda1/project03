@@ -92,15 +92,20 @@
 <div class="center"><a id="comment" class="waves-effect waves-light btn purple">Comment</a></div>
 
 <!--- Chat box -->
-  <div class="col s12" id="chatbox">
-  <div class="row">
+
+        <$ for(var i = 0; i < event.comment.length; i++) {$>
+<div class="row">
     <div class="col s12 m6 offset-m3">
-      <div class="card-panel purple lighten-2 text-black">
-        <span class="white-text">Hey, I'm thinking about going to the show! Any bromancers want to meet up and march in a Black Parade down to the venue!?  Hit me up!
-        </span>
+      <div class="card-panel purple lighten-2 text-black"><strong><$=event.comment[i].author $>:</strong> <$=event.comment[i].text $>
+          </br>
+
+
       </div>
     </div>
   </div>
+        <$ } $>
+
+
   </div>
 
 
