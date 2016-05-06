@@ -19,10 +19,15 @@ function create(req, res){
       var eventNew = new Event()
       eventNew.eventfulId = req.body.eventfulId
       eventNew.venue = req.body.venue
+      eventNew.venueAddress = req.body.venueAddress
+      eventNew.venueUrl = req.body.venueUrl
+      eventNew.city = req.body.city
+      eventNew.state = req.body.state
       eventNew.title = req.body.title
       eventNew.date = req.body.date
       eventNew.imageUrl = req.body.imageUrl
       eventNew.users = [req.user._id]
+
       console.log("REQUEST: ", req.body)
       console.log("EVENT_NEW: ", eventNew)
 

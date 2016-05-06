@@ -5,15 +5,15 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Groupy Event</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.11.2/lodash.min.js"></script>
+  <script src="../js/profile.js" type="text/javascript" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="../js/main.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="https://cdn.jsdelivr.net/lodash/4.11.2/lodash.min.js"></script>
-    <script src="../js/profile.js" type="text/javascript" charset="utf-8"></script>
+
 
 </head>
 <body>
@@ -22,7 +22,7 @@
   <nav class="purple" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo thin">Groupy</a>
       <ul class="right hide-on-med-and-down">
-      <li><a href="http://localhost:3000/users/user">Profile</a></li>
+      <li><a href="/users/user">Profile</a></li>
         <$ if (user) { $>
           <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
           <$ } else { $>
@@ -62,15 +62,14 @@
             <div class="card purple lighten-2">
               <div class="card-content white-text">
 
-                <span class="card-title"><$= event.venue $></span>
-          <span class="card-title"><$= user.name $></span>
-                <p>Address</p>
-                <p>Address</p>
-                <p><$= event.date $></p>
+                <span class="card-title"><$= event.date $></span>
+                <p><$= event.venue $></p>
+                <p> <$= event.venueAddress $></p>
+                <p><$= event.city $>, <$= event.state $></p>
                 </div>
                 <div class="card-action white-text">
-                  <a href="#">This is a link</a>
-                  <a href="#">This is a link</a>
+                  <a href="<$= event.venueUrl $>"><$= event.venue$>'s website</a>
+                  <a href='https://www.google.com/maps/dir//<$= event.venueAddress $> <$= event.city $> <$= event.state $>'>Map</a>
                 </div>
               </div>
             </div>

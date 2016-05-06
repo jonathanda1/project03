@@ -3,6 +3,9 @@ console.log("main")
 
 var $searchedEvent = $("searched-event-list");
 
+$('#cancel-button').click(function(event) {
+  $('#searched-event-list').html('')
+});
 
 $('#search-button').click(function(event){
   console.log('clicked')
@@ -13,7 +16,12 @@ console.log(name)
     url: '/api/artist/'+name+'/events',
    success: function(data){
        var eventlist = data
-       var event = eventlist.events.event
+       if(eventlist.events != null) var event = eventlist.events.event
+       console.log('herehere event: '+ event)
+       if(!event){
+          $('#searched-event-list').append('<h4>No events found for '+name+'</h4>')
+       }else{
+        console.log('FOUND EVENT')
              $('#searched-event-list').append('<h4>Upcoming events for '+name+'</h4>')
        for(i=0; i<event.length; i++){
         var searchedEvent = '<div class="eventSample">'+event[i].start_time+' | '+event[i].title+' | '+event[i].venue_name+'<a id=' +i+' class="add-button waves-effect waves-light btn purple accent-2 right">add</a></div><br/>'
@@ -21,6 +29,10 @@ console.log(name)
           $('#searched-event-list').append(searchedEvent)
           $('#'+i).data({
             venue: event[i].venue_name,
+            venueAddress: event[i].venue_address,
+            city: event[i].city_name,
+            state: event[i].region_name,
+            venueUrl: event[i].venue_url,
             title: event[i].title,
             date: event[i].start_time,
             imageUrl: event[i].image.medium.url || '#',
@@ -29,27 +41,10 @@ console.log(name)
           })
 
        }
-       $('.add-button').click(function(e) {
-
-
-        // .then(function(event){
-        //   console.log('ajax worked')
-        //   console.log(event)
-        // })
-        // $.post('/events', {event: event[e.target.id]}, function(data) {
-        //   console.log(data)
-          /*optional stuff to do after success */
-        });
-
-      // })
-    //    $.ajax({
-    //     method: "POST",
-    //     url: "users/user",
-    //     data: {
-
-    //           },
-    //    })
-
+      }
+    },
+    failure: function(){
+      console.log('NO EVENTS - FAILURE')
     }
  });
 })
