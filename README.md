@@ -10,3 +10,5 @@ Groupy was built with a combination of MongoDB, Express, Node and styling with M
 ##Installation/Startup Instructions
 To use, just click the link provided and log in via Google 
 http://groupyevents.herokuapp.com/
+
+![alt text](public/images/P3ERB.png "Description goes here")
