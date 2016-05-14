@@ -21,7 +21,8 @@
 
   <!-- Nav bar -->
   <nav class="purple" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo thin">Groupy</a>
+    <div class="nav-wrapper container">
+    <a id="logo-container" href="/" class="brand-logo thin">Groupy</a>
       <ul class="right hide-on-med-and-down">
       <li><a href="/">Home</a></li>
         <$ if (user) { $>
@@ -33,7 +34,13 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="/">Home</a></li>
+        <$ if (user) { $>
+
+        <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+        <$ } else { $>
+        <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+        <$ } $>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -78,6 +85,7 @@
   <!-- Image cards -->
   <div id='event-container'>
     <div id='event-row' class="row">
+    <h4>Your Upcoming Events</h4>
     <!-- Card 1 -->
 
     </div>

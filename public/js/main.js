@@ -1,5 +1,7 @@
+$( document ).ready(function(){
 
 console.log("main")
+$(".button-collapse").sideNav()
 
 var $searchedEvent = $("searched-event-list");
 
@@ -90,7 +92,7 @@ $(document).on('click', '.add-button', function(){
   location.reload()
 })
 
-
+})
 
 // Comment box
 

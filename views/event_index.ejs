@@ -16,7 +16,8 @@
 
   <!-- Nav bar -->
   <nav class="purple" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo thin">Groupy</a>
+    <div class="nav-wrapper container">
+    <a id="logo-container" href="/" class="brand-logo thin">Groupy</a>
       <ul class="right hide-on-med-and-down">
         <$ if (user) { $>
           <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
@@ -26,7 +27,11 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <$ if (user) { $>
+          <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+          <$ } else { $>
+          <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+          <$ } $>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
